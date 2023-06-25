@@ -23,6 +23,7 @@ const double s32 = 32.0;
 const double s38 = 38.0;
 const double s40 = 40.0;
 const double s42 = 42.0;
+const double s44 = 44.0;
 const double s48 = 48.0;
 const double s50 = 50.0;
 const double s60 = 60.0;

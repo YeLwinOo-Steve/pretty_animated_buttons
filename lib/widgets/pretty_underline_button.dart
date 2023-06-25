@@ -4,6 +4,11 @@ import 'package:pretty_buttons/configs/pkg_sizes.dart';
 import 'package:pretty_buttons/extensions/string_ex.dart';
 import 'package:pretty_buttons/extensions/widget_ex.dart';
 
+/// [PrettyUnderlineButton] is animated button
+/// that creates slide underline animation and moves the icon to the right a bit
+/// when user taps on the button
+/// There are two underline slide animations and
+/// you can specify each color using [firstSlideColor] & [secondSlideColor] parameters
 class PrettyUnderlineButton extends StatefulWidget {
   const PrettyUnderlineButton({
     super.key,
