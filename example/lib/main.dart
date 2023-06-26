@@ -47,45 +47,46 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              PrettyShadowButton(
-                label: "Pretty Shadow Button",
-                onPressed: () {},
-                icon: Icons.arrow_forward,
-              ),
-              PrettyNeumorphicButton(
-                label: 'Pretty Neumorphic Button',
-                onPressed: () {},
-              ),
-              PrettyUnderlineButton(
-                label: 'Pretty Underline Button',
-                onPressed: () {},
-                secondSlideColor: scaffoldBg,
-              ),
-              PrettyWaveButton(
-                child: const Text(
-                  'Pretty Wave Button',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                onPressed: () {},
-              ),
-              const PrettyFuzzyButton(
-                label: 'Pretty Fuzzy Button',
-                foregroundColor: Colors.black,
-              ),
-              PrettySlideIconButton(
-                foregroundColor: Colors.indigoAccent,
-                icon: Icons.arrow_forward,
-                label: 'Pretty Slide Icon Button',
-                labelStyle: Theme.of(context).textTheme.bodyLarge!,
-                slidePosition: SlidePosition.right,
-              ),
-              const PrettySlideUpButton(
-                firstChild: Text('First Slide Up Text'),
-                secondChild: Text('First Slide Up Text'),
-              ),
-              PrettyColorSlideButton(label: 'Pretty Color Slide Button',),
+              // PrettyShadowButton(
+              //   label: "Pretty Shadow Button",
+              //   onPressed: () {},
+              //   icon: Icons.arrow_forward,
+              // ),
+              // PrettyNeumorphicButton(
+              //   label: 'Pretty Neumorphic Button',
+              //   onPressed: () {},
+              // ),
+              // PrettyUnderlineButton(
+              //   label: 'Pretty Underline Button',
+              //   onPressed: () {},
+              //   secondSlideColor: scaffoldBg,
+              // ),
+              // PrettyWaveButton(
+              //   child: const Text(
+              //     'Pretty Wave Button',
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //     ),
+              //   ),
+              //   onPressed: () {},
+              // ),
+              // const PrettyFuzzyButton(
+              //   label: 'Pretty Fuzzy Button',
+              //   foregroundColor: Colors.black,
+              // ),
+              // PrettySlideIconButton(
+              //   foregroundColor: Colors.indigoAccent,
+              //   icon: Icons.arrow_forward,
+              //   label: 'Pretty Slide Icon Button',
+              //   labelStyle: Theme.of(context).textTheme.bodyLarge!,
+              //   slidePosition: SlidePosition.right,
+              // ),
+              // const PrettySlideUpButton(
+              //   firstChild: Text('First Slide Up Text'),
+              //   secondChild: Text('First Slide Up Text'),
+              // ),
+              // PrettyColorSlideButton(label: 'Pretty Color Slide Button',),
+              PrettySkewButton(),
             ],
           ),
         ),
