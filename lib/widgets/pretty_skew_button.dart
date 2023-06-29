@@ -3,6 +3,7 @@ import 'package:pretty_buttons/configs/pkg_colors.dart';
 import 'package:pretty_buttons/configs/pkg_sizes.dart';
 import 'package:pretty_buttons/enums/skew_positions.dart';
 import 'package:pretty_buttons/extensions/string_ex.dart';
+import 'package:pretty_buttons/extensions/widget_ex.dart';
 import 'package:pretty_buttons/util/animated_color_text.dart';
 
 
@@ -80,8 +81,11 @@ class _PrettySkewButtonState extends State<PrettySkewButton>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _controller.reset();
-        _controller.forward();
+        if (_controller.isCompleted) {
+          _controller.reverse();
+        } else if(_controller.isDismissed){
+          _controller.forward();
+        }
       },
       child: Stack(
         alignment: widget.skewPosition == SkewPositions.left
@@ -108,16 +112,15 @@ class _PrettySkewButtonState extends State<PrettySkewButton>
             right: 0,
             bottom: 0,
             top: 0,
-            child: SizedBox(
+            child: AnimatedColorText(
+              label: widget.label,
+              labelStyle: widget.labelStyle,
+              firstColor: widget.secondBgColor,
+              secondColor: widget.firstBgColor,
+              animation: _controller,
+            ).addSizedBox(
               width: containerSize.width,
               height: containerSize.height,
-              child: AnimatedColorText(
-                label: widget.label,
-                labelStyle: widget.labelStyle,
-                firstColor: widget.secondBgColor,
-                secondColor: widget.firstBgColor,
-                animation: _controller,
-              ),
             ),
           ),
         ],

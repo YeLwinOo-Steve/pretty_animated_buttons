@@ -5,6 +5,8 @@ import 'package:pretty_buttons/configs/pkg_sizes.dart';
 import 'package:pretty_buttons/extensions/string_ex.dart';
 import 'package:pretty_buttons/extensions/widget_ex.dart';
 
+/// [PrettyBorderButton] is an animated button
+/// that creates a border from left bottom and top right at the same time when pressed the button in mobile devices
 class PrettyBorderButton extends StatefulWidget {
   const PrettyBorderButton({
     super.key,
@@ -61,17 +63,14 @@ class _PrettyBorderButtonState extends State<PrettyBorderButton>
         }
       },
       child: <Widget>[
-        Container(
-          decoration: const BoxDecoration(
-            color: kWhite,
-          ),
-          child: Center(
-            child: Text(
-              widget.label,
-              style: widget.labelStyle,
+        Text(
+          widget.label,
+          style: widget.labelStyle,
+        ).addCenter().addContainer(
+              decoration: const BoxDecoration(
+                color: kWhite,
+              ),
             ),
-          ),
-        ),
         Align(
           alignment: Alignment.topRight,
           child: _AnimatedBorder(
@@ -122,7 +121,6 @@ class _PrettyBorderButtonState extends State<PrettyBorderButton>
 
 class _AnimatedBorder extends AnimatedWidget {
   const _AnimatedBorder({
-    Key? key,
     required this.animation,
     required this.containerSize,
     required this.isHorizontal,

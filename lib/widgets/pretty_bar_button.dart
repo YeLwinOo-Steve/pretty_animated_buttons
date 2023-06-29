@@ -5,6 +5,8 @@ import 'package:pretty_buttons/configs/pkg_sizes.dart';
 import 'package:pretty_buttons/extensions/string_ex.dart';
 import 'package:pretty_buttons/extensions/widget_ex.dart';
 
+/// [PrettyBarButton] is an animated bar button that makes a horizontal bar
+/// at the upper and lower end of the button when you press the button
 class PrettyBarButton extends StatefulWidget {
   const PrettyBarButton({
     super.key,
@@ -66,16 +68,14 @@ class _PrettyBarButtonState extends State<PrettyBarButton>
         widget.onPressed();
       },
       child: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            color: widget.backgroundColor,
-          ),
-          child: Center(
-              child: Text(
-            widget.label,
-            style: widget.labelStyle,
-          )),
-        ),
+        Text(
+          widget.label,
+          style: widget.labelStyle,
+        ).addCenter().addContainer(
+              decoration: BoxDecoration(
+                color: widget.backgroundColor,
+              ),
+            ),
         Align(
           alignment: Alignment.topRight,
           child: _AnimatedBorder(
@@ -104,7 +104,6 @@ class _PrettyBarButtonState extends State<PrettyBarButton>
 
 class _AnimatedBorder extends AnimatedWidget {
   const _AnimatedBorder({
-    Key? key,
     required this.animation,
     required this.containerSize,
     required this.borderWidth,

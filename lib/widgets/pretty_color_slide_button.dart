@@ -6,7 +6,6 @@ import 'package:pretty_buttons/extensions/string_ex.dart';
 import 'package:pretty_buttons/extensions/widget_ex.dart';
 import 'package:pretty_buttons/util/animated_color_text.dart';
 
-
 /// [PrettyColorSlideButton] is pretty button that slides in a color when button is tapped
 /// You'll have 4 slide positions - left,right,top,bottom using [position] parameter
 /// When a second layer comes in, it swaps colors such that previous foreground color becomes new background color
@@ -66,8 +65,11 @@ class _PrettyColorSlideButtonState extends State<PrettyColorSlideButton>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _controller.reset();
-        _controller.forward();
+        if (_controller.isCompleted) {
+          _controller.reverse();
+        } else if(_controller.isDismissed){
+          _controller.forward();
+        }
       },
       child: <Widget>[
         Container(
@@ -141,13 +143,6 @@ class SlideColorAnimation extends AnimatedWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // alignment: (position == SlidePosition.top)
-      //     ? Alignment.topCenter
-      //     : (position == SlidePosition.left)
-      //         ? Alignment.centerLeft
-      //         : (position == SlidePosition.right)
-      //             ? Alignment.centerRight
-      //             : Alignment.bottomCenter,
       width: isHorizontal ? widthAnimation.value : btnSize.width,
       height: isVertical ? heightAnimation.value : btnSize.height,
       decoration: BoxDecoration(

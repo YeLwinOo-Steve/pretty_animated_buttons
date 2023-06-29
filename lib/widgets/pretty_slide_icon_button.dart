@@ -72,7 +72,24 @@ class _PrettySlideIconButtonState extends State<PrettySlideIconButton>
           _controller.reset();
           _controller.forward();
         },
-        child: Container(
+        child: <Widget>[
+          Text(
+            widget.label,
+            style: widget.labelStyle.copyWith(
+              color: widget.foregroundColor,
+            ),
+          ),
+          horizontalSpaceMedium,
+          SlideIcon(
+            animation: _controller,
+            icon: widget.icon,
+            color: widget.foregroundColor,
+            slidePosition: widget.slidePosition,
+            curve: widget.curve,
+          ),
+        ].addRow(
+          mainAxisSize: MainAxisSize.min,
+        ).addContainer(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(s50),
             border: Border.all(
@@ -81,24 +98,6 @@ class _PrettySlideIconButtonState extends State<PrettySlideIconButton>
             ),
           ),
           padding: widget.padding,
-          child: <Widget>[
-            Text(
-              widget.label,
-              style: widget.labelStyle.copyWith(
-                color: widget.foregroundColor,
-              ),
-            ),
-            horizontalSpaceMedium,
-            SlideIcon(
-              animation: _controller,
-              icon: widget.icon,
-              color: widget.foregroundColor,
-              slidePosition: widget.slidePosition,
-              curve: widget.curve,
-            ),
-          ].addRow(
-            mainAxisSize: MainAxisSize.min,
-          ),
         ),
       ),
     );

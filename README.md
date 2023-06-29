@@ -1,39 +1,89 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+ # Pretty Buttons
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+ ## Pretty Buttons is a package for a collection of beautiful animated buttons which are highly customizable too. Currently, a total of 12 animated buttons are available. More fancy buttons are coming soon...
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+### Pretty Buttons List
 
-## Features
+| Index | Pretty Buttons | Example  
+| --- | ------- | ------ |
+| 1 | Pretty Shadow Button | 301 |
+| 2 | Pretty Neumorphic Button | 302 |
+| 3 | Pretty Underline Button | 303 |
+| 4 | Pretty Wave Button | 304 |
+| 5 | Pretty Fuzzy Button | 305 |
+| 6 | Pretty Slide Icon Button | 306 |
+| 7 | Pretty Slide Up Button | 307 |
+| 8 | Pretty Color Slide Button | 308 |
+| 9 | Pretty Skew Button | 309 |
+| 10 | Pretty Border Button | 310 |
+| 11 | Pretty Bar Button | 311 |
+| 12 | Pretty Capsule Button | 312 |
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+___
+
+The usage is pretty simple. Just use the button's name. 
+
+Eg. For Pretty Shadow Button, use like this.
 
 ```dart
-const like = 'sample';
+    PrettyShadowButton(
+      label: "Pretty Shadow Button",
+      onPressed: () {},
+      icon: Icons.arrow_forward,
+      shadowColor: Colors.green,
+    ),
 ```
 
-## Additional information
+You can play around with tons of parameters. 
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+
+### Pretty Color Slide Button
+
+___
+
+
+`PrettyColorSlideButton` has special parameter for sliding direction which is `position` parameter.
+
+For left to right slide,
+```dart
+  position: SlidePosition.left
+```
+For right to left slide,
+```dart
+  position: SlidePosition.right
+```
+For top to bottom slide,
+```dart
+  position: SlidePosition.top
+```
+For bottom to top slide,
+```dart
+  position: SlidePosition.bottom
+```
+
+### Pretty Skew Button
+
+____
+
+`PrettySkewButton` also has left & right slide positions which can be tweaked via `skewPosition` parameter.
+
+For left to right slide,
+```dart 
+  skewPosition: SkewPositions.left,
+```
+For right to left slide,
+```dart 
+  skewPosition: SkewPositions.right,
+```
+
+## Suggestions are welcome! ☕
+
+ 🚧🏗️ The project is under development.
+
+ Feel free to try this out and give it a ⭐.
+
+ More button suggestions are warmly welcome!. 

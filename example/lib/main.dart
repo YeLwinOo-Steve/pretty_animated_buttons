@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pretty Buttons Example',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
@@ -30,13 +31,10 @@ class PrettyButtonsExample extends StatefulWidget {
 
 class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
   final Color? scaffoldBg = Colors.grey[300];
+  final Color btnColor = Colors.teal.shade200;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pretty Buttons Example'),
-        elevation: 0.0,
-      ),
       backgroundColor: scaffoldBg,
       body: Padding(
         padding: const EdgeInsets.all(
@@ -47,11 +45,12 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // PrettyShadowButton(
-              //   label: "Pretty Shadow Button",
-              //   onPressed: () {},
-              //   icon: Icons.arrow_forward,
-              // ),
+              PrettyShadowButton(
+                label: "Pretty Shadow Button",
+                onPressed: () {},
+                icon: Icons.arrow_forward,
+                shadowColor: btnColor,
+              ),
               // PrettyNeumorphicButton(
               //   label: 'Pretty Neumorphic Button',
               //   onPressed: () {},
@@ -107,7 +106,12 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               //   onPressed: () {},
               //   label: 'Pretty Bar Button',
               // ),
-              PrettyCapsuleButton(),
+              // PrettyCapsuleButton(
+              //   label: 'Pretty Capsule Button'.toUpperCase(),
+              //   labelStyle: TextStyle(
+              //     fontWeight: FontWeight.w700,
+              //   ),
+              // ),
             ],
           ),
         ),

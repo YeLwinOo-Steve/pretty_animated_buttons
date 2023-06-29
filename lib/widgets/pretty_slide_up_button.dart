@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pretty_buttons/configs/pkg_colors.dart';
 import 'package:pretty_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_buttons/extensions/widget_ex.dart';
 
 /// [PrettySlideUpButton] has two children
 /// It always shows first child if there's no interaction such as pressing the button
@@ -30,7 +31,6 @@ class PrettySlideUpButton extends StatefulWidget {
 
 class _PrettySlideUpButtonState extends State<PrettySlideUpButton>
     with SingleTickerProviderStateMixin {
-
   late AnimationController _controller;
   @override
   void initState() {
@@ -87,34 +87,34 @@ class _PrettySlideUpButtonState extends State<PrettySlideUpButton>
         _controller.reset();
         _controller.forward();
       },
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-            widget.borderRadius,
+      child: <Widget>[
+        FadeTransition(
+          opacity: firstOpacityAnimation,
+          child: SlideTransition(
+            position: firstSlideUpAnimation,
+            child: widget.firstChild,
           ),
-          color: widget.bgColor,
         ),
-        padding: widget.padding,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            FadeTransition(
-              opacity: firstOpacityAnimation,
-              child: SlideTransition(
-                position: firstSlideUpAnimation,
-                child: widget.firstChild,
-              ),
-            ),
-            FadeTransition(
-              opacity: secondOpacityAnimation,
-              child: SlideTransition(
-                position: secondSlideUpAnimation,
-                child: widget.secondChild,
-              ),
-            ),
-          ],
+        FadeTransition(
+          opacity: secondOpacityAnimation,
+          child: SlideTransition(
+            position: secondSlideUpAnimation,
+            child: widget.secondChild,
+          ),
         ),
-      ),
+      ]
+          .addStack(
+            alignment: Alignment.center,
+          )
+          .addContainer(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                widget.borderRadius,
+              ),
+              color: widget.bgColor,
+            ),
+            padding: widget.padding,
+          ),
     );
   }
 }
