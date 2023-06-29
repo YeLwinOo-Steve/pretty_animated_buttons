@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_buttons/configs/pkg_sizes.dart';
 import 'package:pretty_buttons/enums/slide_positions.dart';
+import 'package:pretty_buttons/extensions/widget_ex.dart';
 
 /// [PrettySlideIconButton] is an animated slide icon button
 /// creates slide icon animation when hovering on web and
@@ -28,7 +29,7 @@ class PrettySlideIconButton extends StatefulWidget {
   final IconData icon;
   final String label;
   final TextStyle labelStyle;
-  final SlidePosition? slidePosition;
+  final SlidePosition slidePosition;
   final Duration duration;
   final Curve curve;
   final EdgeInsetsGeometry padding;
@@ -48,6 +49,12 @@ class _PrettySlideIconButtonState extends State<PrettySlideIconButton>
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onHover: (_) {
@@ -62,6 +69,7 @@ class _PrettySlideIconButtonState extends State<PrettySlideIconButton>
       },
       child: GestureDetector(
         onTap: () {
+          _controller.reset();
           _controller.forward();
         },
         child: Container(
@@ -73,24 +81,23 @@ class _PrettySlideIconButtonState extends State<PrettySlideIconButton>
             ),
           ),
           padding: widget.padding,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                widget.label,
-                style: widget.labelStyle.copyWith(
-                  color: widget.foregroundColor,
-                ),
-              ),
-              horizontalSpaceMedium,
-              SlideIcon(
-                animation: _controller,
-                icon: widget.icon,
+          child: <Widget>[
+            Text(
+              widget.label,
+              style: widget.labelStyle.copyWith(
                 color: widget.foregroundColor,
-                slidePosition: widget.slidePosition,
-                curve: widget.curve,
               ),
-            ],
+            ),
+            horizontalSpaceMedium,
+            SlideIcon(
+              animation: _controller,
+              icon: widget.icon,
+              color: widget.foregroundColor,
+              slidePosition: widget.slidePosition,
+              curve: widget.curve,
+            ),
+          ].addRow(
+            mainAxisSize: MainAxisSize.min,
           ),
         ),
       ),
@@ -104,11 +111,11 @@ class SlideIcon extends StatelessWidget {
     required this.animation,
     required this.icon,
     required this.color,
-    this.slidePosition,
+    required this.slidePosition,
     this.curve = Curves.easeInOut,
   });
   final Animation<double> animation;
-  final SlidePosition? slidePosition;
+  final SlidePosition slidePosition;
   final Curve curve;
   final IconData icon;
   final Color color;

@@ -4,7 +4,13 @@ import 'package:pretty_buttons/configs/pkg_sizes.dart';
 import 'package:pretty_buttons/enums/slide_positions.dart';
 import 'package:pretty_buttons/extensions/string_ex.dart';
 import 'package:pretty_buttons/extensions/widget_ex.dart';
+import 'package:pretty_buttons/util/animated_color_text.dart';
 
+
+/// [PrettyColorSlideButton] is pretty button that slides in a color when button is tapped
+/// You'll have 4 slide positions - left,right,top,bottom using [position] parameter
+/// When a second layer comes in, it swaps colors such that previous foreground color becomes new background color
+/// and previous background color to new foreground one
 class PrettyColorSlideButton extends StatefulWidget {
   const PrettyColorSlideButton({
     super.key,
@@ -12,7 +18,7 @@ class PrettyColorSlideButton extends StatefulWidget {
     this.foregroundColor = kWhite,
     required this.label,
     this.labelStyle,
-    this.position = SlidePosition.bottom,
+    this.position = SlidePosition.left,
     this.padding = const EdgeInsets.symmetric(horizontal: s24, vertical: s14),
   });
   final Color bgColor;
@@ -65,24 +71,34 @@ class _PrettyColorSlideButtonState extends State<PrettyColorSlideButton>
       },
       child: <Widget>[
         Container(
-          padding: widget.padding,
+          width: btnSize.width,
+          height: btnSize.height,
           decoration: BoxDecoration(
             color: widget.bgColor,
-          ),
-          child: Text(
-            'Pretty Color Slide Button',
-            style: TextStyle(
-              color: widget.foregroundColor,
-            ),
           ),
         ),
         SlideColorAnimation(
           animation: _controller,
           bgColor: widget.foregroundColor,
-          foregroundColor: widget.bgColor,
           btnSize: btnSize,
-          padding: widget.padding,
           position: widget.position,
+        ),
+        SizedBox(
+          width: btnSize.width,
+          height: btnSize.height,
+          child: AnimatedColorText(
+            label: widget.label,
+            labelStyle: widget.labelStyle,
+            animation: _controller,
+            firstColor: (widget.position == SlidePosition.left ||
+                    widget.position == SlidePosition.top)
+                ? widget.foregroundColor
+                : widget.bgColor,
+            secondColor: (widget.position == SlidePosition.left ||
+                    widget.position == SlidePosition.top)
+                ? widget.bgColor
+                : widget.foregroundColor,
+          ),
         ),
       ].addStack(),
     );
@@ -94,39 +110,48 @@ class SlideColorAnimation extends AnimatedWidget {
     super.key,
     required this.animation,
     required this.bgColor,
-    required this.foregroundColor,
     required this.btnSize,
-    required this.padding,
     required this.position,
   }) : super(
           listenable: animation,
         );
   final Animation<double> animation;
   final Color bgColor;
-  final Color foregroundColor;
-  final EdgeInsetsGeometry? padding;
   final Size btnSize;
   final SlidePosition position;
 
   Animation<double> get curvedAnimation =>
       CurvedAnimation(parent: animation, curve: Curves.easeInOut);
 
-  Animation<double> get heightAnimation =>
-      Tween<double>(begin: btnSize.height, end: s0).animate(curvedAnimation);
+  Animation<double> get heightAnimation => Tween<double>(
+        begin: isTop ? s0 : btnSize.height,
+        end: isTop ? btnSize.height : s0,
+      ).animate(curvedAnimation);
+
+  Animation<double> get widthAnimation => Tween<double>(
+        begin: isLeft ? s0 : btnSize.width,
+        end: isLeft ? btnSize.width : s0,
+      ).animate(curvedAnimation);
+
+  bool get isTop => position == SlidePosition.top;
+  bool get isLeft => position == SlidePosition.left;
+  bool get isVertical => isTop || position == SlidePosition.bottom;
+  bool get isHorizontal =>
+      position == SlidePosition.left || position == SlidePosition.right;
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: position == SlidePosition.top
-       ? Alignment.topCenter : Alignment.bottomCenter,
-      width: btnSize.width,
-      height: heightAnimation.value,
-      padding: padding,
+      // alignment: (position == SlidePosition.top)
+      //     ? Alignment.topCenter
+      //     : (position == SlidePosition.left)
+      //         ? Alignment.centerLeft
+      //         : (position == SlidePosition.right)
+      //             ? Alignment.centerRight
+      //             : Alignment.bottomCenter,
+      width: isHorizontal ? widthAnimation.value : btnSize.width,
+      height: isVertical ? heightAnimation.value : btnSize.height,
       decoration: BoxDecoration(
         color: bgColor,
-      ),
-      child: Text(
-        'Pretty Color Slide Button',
-        style: TextStyle(color: foregroundColor),
       ),
     );
   }

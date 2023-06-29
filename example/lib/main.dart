@@ -79,14 +79,35 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               //   icon: Icons.arrow_forward,
               //   label: 'Pretty Slide Icon Button',
               //   labelStyle: Theme.of(context).textTheme.bodyLarge!,
-              //   slidePosition: SlidePosition.right,
               // ),
               // const PrettySlideUpButton(
-              //   firstChild: Text('First Slide Up Text'),
-              //   secondChild: Text('First Slide Up Text'),
+              //   firstChild: Text(
+              //     'First Slide Up Text',
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //     ),
+              //   ),
+              //   secondChild: Text(
+              //     'Second Slide Up Text',
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //     ),
+              //   ),
               // ),
-              // PrettyColorSlideButton(label: 'Pretty Color Slide Button',),
-              PrettySkewButton(),
+              // const PrettyColorSlideButton(
+              //   label: 'Pretty Color Slide Button',
+              // ),
+              // const PrettySkewButton(
+              //   label: 'Pretty Skew Button',
+              // ),
+              // PrettyBorderButton(
+              //   label: 'Pretty Border Button',
+              // ),
+              // PrettyBarButton(
+              //   onPressed: () {},
+              //   label: 'Pretty Bar Button',
+              // ),
+              PrettyCapsuleButton(),
             ],
           ),
         ),

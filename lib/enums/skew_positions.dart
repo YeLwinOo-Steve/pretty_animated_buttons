@@ -1,0 +1,4 @@
+enum SkewPositions {
+  left,
+  center
+}
