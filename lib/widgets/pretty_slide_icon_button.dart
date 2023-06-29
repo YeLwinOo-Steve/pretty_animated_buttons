@@ -24,6 +24,7 @@ class PrettySlideIconButton extends StatefulWidget {
       vertical: s12,
     ),
     this.borderWidth = s1,
+    required this.onPressed,
   });
   final Color foregroundColor;
   final IconData icon;
@@ -34,6 +35,7 @@ class PrettySlideIconButton extends StatefulWidget {
   final Curve curve;
   final EdgeInsetsGeometry padding;
   final double borderWidth;
+  final VoidCallback onPressed;
   @override
   State<PrettySlideIconButton> createState() => _PrettySlideIconButtonState();
 }
@@ -71,6 +73,7 @@ class _PrettySlideIconButtonState extends State<PrettySlideIconButton>
         onTap: () {
           _controller.reset();
           _controller.forward();
+          widget.onPressed();
         },
         child: <Widget>[
           Text(
@@ -87,18 +90,20 @@ class _PrettySlideIconButtonState extends State<PrettySlideIconButton>
             slidePosition: widget.slidePosition,
             curve: widget.curve,
           ),
-        ].addRow(
-          mainAxisSize: MainAxisSize.min,
-        ).addContainer(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(s50),
-            border: Border.all(
-              color: widget.foregroundColor,
-              width: widget.borderWidth,
+        ]
+            .addRow(
+              mainAxisSize: MainAxisSize.min,
+            )
+            .addContainer(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(s50),
+                border: Border.all(
+                  color: widget.foregroundColor,
+                  width: widget.borderWidth,
+                ),
+              ),
+              padding: widget.padding,
             ),
-          ),
-          padding: widget.padding,
-        ),
       ),
     );
   }

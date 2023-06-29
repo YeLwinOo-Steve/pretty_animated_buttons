@@ -31,7 +31,7 @@ class PrettyButtonsExample extends StatefulWidget {
 
 class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
   final Color? scaffoldBg = Colors.grey[300];
-  final Color btnColor = Colors.teal.shade200;
+  final Color btnColor = Colors.teal;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,67 +51,79 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
                 icon: Icons.arrow_forward,
                 shadowColor: btnColor,
               ),
-              // PrettyNeumorphicButton(
-              //   label: 'Pretty Neumorphic Button',
-              //   onPressed: () {},
-              // ),
-              // PrettyUnderlineButton(
-              //   label: 'Pretty Underline Button',
-              //   onPressed: () {},
-              //   secondSlideColor: scaffoldBg,
-              // ),
-              // PrettyWaveButton(
-              //   child: const Text(
-              //     'Pretty Wave Button',
-              //     style: TextStyle(
-              //       color: Colors.white,
-              //     ),
-              //   ),
-              //   onPressed: () {},
-              // ),
-              // const PrettyFuzzyButton(
-              //   label: 'Pretty Fuzzy Button',
-              //   foregroundColor: Colors.black,
-              // ),
-              // PrettySlideIconButton(
-              //   foregroundColor: Colors.indigoAccent,
-              //   icon: Icons.arrow_forward,
-              //   label: 'Pretty Slide Icon Button',
-              //   labelStyle: Theme.of(context).textTheme.bodyLarge!,
-              // ),
-              // const PrettySlideUpButton(
-              //   firstChild: Text(
-              //     'First Slide Up Text',
-              //     style: TextStyle(
-              //       color: Colors.white,
-              //     ),
-              //   ),
-              //   secondChild: Text(
-              //     'Second Slide Up Text',
-              //     style: TextStyle(
-              //       color: Colors.white,
-              //     ),
-              //   ),
-              // ),
-              // const PrettyColorSlideButton(
-              //   label: 'Pretty Color Slide Button',
-              // ),
-              // const PrettySkewButton(
-              //   label: 'Pretty Skew Button',
-              // ),
-              // PrettyBorderButton(
-              //   label: 'Pretty Border Button',
-              // ),
-              // PrettyBarButton(
-              //   onPressed: () {},
-              //   label: 'Pretty Bar Button',
-              // ),
-              // PrettyCapsuleButton(
-              //   label: 'Pretty Capsule Button'.toUpperCase(),
-              //   labelStyle: TextStyle(
-              //     fontWeight: FontWeight.w700,
-              //   ),
-              // ),
+              PrettyNeumorphicButton(
+                label: 'Pretty Neumorphic Button',
+                onPressed: () {},
+              ),
+              PrettySlideUnderlineButton(
+                label: 'Pretty Slide Underline Button',
+                onPressed: () {},
+                secondSlideColor: scaffoldBg,
+              ),
+              PrettyWaveButton(
+                child: const Text(
+                  'Pretty Wave Button',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {},
+              ),
+              PrettyFuzzyButton(
+                label: 'Pretty Fuzzy Button',
+                onPressed: () {},
+              ),
+              PrettySlideIconButton(
+                foregroundColor: btnColor,
+                icon: Icons.arrow_forward,
+                label: 'Pretty Slide Icon Button',
+                slidePosition: SlidePosition.right,
+                labelStyle: Theme.of(context).textTheme.bodyLarge!,
+                onPressed:(){},
+              ),
+              PrettySlideUpButton(
+                bgColor: btnColor,
+                onPressed:(){},
+                firstChild: const Text(
+                  'First Slide Up Text',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                secondChild: const Text(
+                  'Second Slide Up Text',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              PrettyColorSlideButton(
+                label: 'Pretty Color Slide Button',
+                onPressed:(){},
+                bgColor: btnColor,
+                position: SlidePosition.bottom,
+              ),
+              PrettySkewButton(
+                label: 'Pretty Skew Button',
+                firstBgColor: btnColor,
+                onPressed:(){},
+              ),
+              PrettyBorderButton(
+                label: 'Pretty Border Button',
+                onPressed:(){},
+              ),
+              PrettyBarButton(
+                onPressed: () {},
+                label: 'Pretty Bar Button',
+              ),
+              PrettyCapsuleButton(
+                label: 'Pretty Capsule Button'.toUpperCase(),
+                labelStyle: const TextStyle(
+                  fontWeight: FontWeight.w700,
+                ),
+                bgColor: btnColor,
+                onPressed:(){},
+              ),
             ],
           ),
         ),

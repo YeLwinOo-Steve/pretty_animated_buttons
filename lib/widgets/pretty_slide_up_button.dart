@@ -17,6 +17,7 @@ class PrettySlideUpButton extends StatefulWidget {
     this.borderRadius = s5,
     this.duration = duration500,
     this.curve = Curves.easeInOut,
+    required this.onPressed,
   });
   final EdgeInsetsGeometry? padding;
   final Widget firstChild;
@@ -25,6 +26,7 @@ class PrettySlideUpButton extends StatefulWidget {
   final double borderRadius;
   final Duration duration;
   final Curve curve;
+  final VoidCallback onPressed;
   @override
   State<PrettySlideUpButton> createState() => _PrettySlideUpButtonState();
 }
@@ -84,8 +86,12 @@ class _PrettySlideUpButtonState extends State<PrettySlideUpButton>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _controller.reset();
-        _controller.forward();
+        if(_controller.isCompleted){
+          _controller.reverse();
+        }else if(_controller.isDismissed) {
+          _controller.forward();
+        }
+        widget.onPressed();
       },
       child: <Widget>[
         FadeTransition(

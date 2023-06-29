@@ -21,7 +21,7 @@ class PrettySkewButton extends StatefulWidget {
     this.labelStyle,
     required this.label,
     this.firstBgColor = kBlack,
-    this.secondBgColor = kWhite,
+    this.secondBgColor = kWhite, required this.onPressed,
   });
   final SkewPositions skewPosition;
   final double horizontalPadding;
@@ -30,6 +30,7 @@ class PrettySkewButton extends StatefulWidget {
   final String label;
   final Color firstBgColor;
   final Color secondBgColor;
+  final VoidCallback onPressed;
   @override
   State<PrettySkewButton> createState() => _PrettySkewButtonState();
 }
@@ -86,6 +87,7 @@ class _PrettySkewButtonState extends State<PrettySkewButton>
         } else if(_controller.isDismissed){
           _controller.forward();
         }
+        widget.onPressed();
       },
       child: Stack(
         alignment: widget.skewPosition == SkewPositions.left

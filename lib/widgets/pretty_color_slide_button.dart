@@ -18,6 +18,7 @@ class PrettyColorSlideButton extends StatefulWidget {
     required this.label,
     this.labelStyle,
     this.position = SlidePosition.left,
+    required this.onPressed,
     this.padding = const EdgeInsets.symmetric(horizontal: s24, vertical: s14),
   });
   final Color bgColor;
@@ -26,6 +27,7 @@ class PrettyColorSlideButton extends StatefulWidget {
   final TextStyle? labelStyle;
   final SlidePosition position;
   final EdgeInsetsGeometry? padding;
+  final VoidCallback onPressed;
   @override
   State<PrettyColorSlideButton> createState() => _PrettyColorSlideButtonState();
 }
@@ -70,6 +72,7 @@ class _PrettyColorSlideButtonState extends State<PrettyColorSlideButton>
         } else if(_controller.isDismissed){
           _controller.forward();
         }
+        widget.onPressed();
       },
       child: <Widget>[
         Container(

@@ -13,12 +13,15 @@ class PrettyBorderButton extends StatefulWidget {
     this.borderWidth = s1,
     this.borderColor = Colors.teal,
     required this.label,
-    this.labelStyle,
+    this.bgColor = kWhite,
+    this.labelStyle, required this.onPressed,
   });
   final String label;
   final TextStyle? labelStyle;
   final double borderWidth;
   final Color borderColor;
+  final VoidCallback onPressed;
+  final Color bgColor;
   @override
   State<PrettyBorderButton> createState() => _PrettyBorderButtonState();
 }
@@ -61,14 +64,15 @@ class _PrettyBorderButtonState extends State<PrettyBorderButton>
           _controller.reset();
           _controller.forward();
         }
+        widget.onPressed();
       },
       child: <Widget>[
         Text(
           widget.label,
           style: widget.labelStyle,
         ).addCenter().addContainer(
-              decoration: const BoxDecoration(
-                color: kWhite,
+              decoration: BoxDecoration(
+                color: widget.bgColor,
               ),
             ),
         Align(

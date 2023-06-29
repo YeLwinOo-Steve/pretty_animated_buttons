@@ -12,7 +12,7 @@ class PrettyBarButton extends StatefulWidget {
     super.key,
     this.borderWidth = s1,
     this.borderColor = Colors.teal,
-    this.backgroundColor = kTransparent,
+    this.bgColor = kTransparent,
     required this.onPressed,
     required this.label,
     this.labelStyle,
@@ -21,7 +21,7 @@ class PrettyBarButton extends StatefulWidget {
   final TextStyle? labelStyle;
   final double borderWidth;
   final Color borderColor;
-  final Color backgroundColor;
+  final Color bgColor;
   final VoidCallback onPressed;
   @override
   State<PrettyBarButton> createState() => _PrettyBarButtonState();
@@ -73,7 +73,7 @@ class _PrettyBarButtonState extends State<PrettyBarButton>
           style: widget.labelStyle,
         ).addCenter().addContainer(
               decoration: BoxDecoration(
-                color: widget.backgroundColor,
+                color: widget.bgColor,
               ),
             ),
         Align(

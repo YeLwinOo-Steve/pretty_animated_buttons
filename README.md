@@ -7,25 +7,24 @@
 
 | Index | Pretty Buttons | Example  
 | --- | ------- | ------ |
-| 1 | Pretty Shadow Button | 301 |
-| 2 | Pretty Neumorphic Button | 302 |
-| 3 | Pretty Underline Button | 303 |
-| 4 | Pretty Wave Button | 304 |
-| 5 | Pretty Fuzzy Button | 305 |
-| 6 | Pretty Slide Icon Button | 306 |
-| 7 | Pretty Slide Up Button | 307 |
-| 8 | Pretty Color Slide Button | 308 |
-| 9 | Pretty Skew Button | 309 |
-| 10 | Pretty Border Button | 310 |
-| 11 | Pretty Bar Button | 311 |
-| 12 | Pretty Capsule Button | 312 |
+| 1 | Pretty Shadow Button | ![Pretty Shadow Button](assets/pretty_shadow_button.gif) |
+| 2 | Pretty Neumorphic Button | ![Pretty Neumorphic Button](assets/pretty_neumorphic_button.gif) |
+| 3 | Pretty Slide Underline Button | ![Pretty Slide Underline Button](assets/pretty_slide_underline_button.gif) |
+| 4 | Pretty Wave Button | ![Pretty Wave Button](assets/pretty_wave_button.gif) |
+| 5 | Pretty Fuzzy Button | ![Pretty Fuzzy Button](assets/pretty_fuzzy_button.gif) |
+| 6 | Pretty Slide Icon Button | ![Pretty Slide Icon Button](assets/pretty_slide_icon_button.gif) |
+| 7 | Pretty Slide Up Button | ![Pretty Slide Up Button](assets/pretty_slide_up_button.gif) |
+| 8 | Pretty Color Slide Button | ![Pretty Color Slide Button](assets/pretty_color_slide_button.gif) |
+| 9 | Pretty Skew Button | ![Pretty Skew Button](assets/pretty_skew_button.gif) |
+| 10 | Pretty Border Button | ![Pretty Border Button](assets/pretty_border_button.gif) |
+| 11 | Pretty Bar Button | ![Pretty Bar Button](assets/pretty_bar_button.gif) |
+| 12 | Pretty Capsule Button | ![Pretty Capsule Button](assets/pretty_capsule_button.gif) |
 
 
 ## Usage
-
 ___
 
-The usage is pretty simple. Just use the button's name. 
+The usage is pretty simple. Just use the button's name in Pascal Case. 
 
 Eg. For Pretty Shadow Button, use like this.
 
@@ -40,6 +39,23 @@ Eg. For Pretty Shadow Button, use like this.
 
 You can play around with tons of parameters. 
 
+### Pretty Slide Icon Button
+
+___
+
+`PrettySlideIconButton` has two icon slide positions - left or right.
+
+From left to right slide, 
+
+```dart 
+  slidePosition: SlidePosition.left,
+```
+
+From right to left slide,
+
+```dart 
+  slidePosition: SlidePosition.right,
+```
 
 ### Pretty Color Slide Button
 

@@ -18,6 +18,7 @@ class PrettyCapsuleButton extends StatefulWidget {
     this.foregroundColor = kWhite,
     this.icon = Icons.arrow_forward_ios,
     this.iconSize = 16,
+    required this.onPressed,
     this.padding = const EdgeInsets.symmetric(horizontal: s24, vertical: s14),
   });
   final String label;
@@ -27,6 +28,7 @@ class PrettyCapsuleButton extends StatefulWidget {
   final IconData icon;
   final double iconSize;
   final EdgeInsetsGeometry padding;
+  final VoidCallback onPressed;
   @override
   State<PrettyCapsuleButton> createState() => _PrettyCapsuleButtonState();
 }
@@ -61,6 +63,7 @@ class _PrettyCapsuleButtonState extends State<PrettyCapsuleButton>
       onTap: () {
         _controller.reset();
         _controller.forward();
+        widget.onPressed();
       },
       child: <Widget>[
         _BackgroundCapsule(

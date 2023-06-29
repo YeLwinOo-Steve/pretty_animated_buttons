@@ -8,20 +8,22 @@ class PrettyFuzzyButton extends StatefulWidget {
   const PrettyFuzzyButton({
     super.key,
     required this.label,
+    required this.onPressed,
     this.labelStyle,
-    required this.foregroundColor,
+    this.foregroundColor = kBlack,
     this.margin = s10,
-    this.radius  = s5,
+    this.radius = s5,
     this.originalColor = kWhite,
     this.secondaryColor = kGreen,
   });
   final String label;
   final TextStyle? labelStyle;
-  final Color foregroundColor;
+  final Color? foregroundColor;
   final double margin;
   final double radius;
   final Color originalColor;
   final Color secondaryColor;
+  final VoidCallback onPressed;
   @override
   State<PrettyFuzzyButton> createState() => _PrettyFuzzyButtonState();
 }
@@ -54,11 +56,23 @@ class _PrettyFuzzyButtonState extends State<PrettyFuzzyButton>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        _controller.reset();
-        _controller.forward();
+      onTapDown: (_) {
+          _controller.forward();
+          setState(() {
+            _isHovered = true;
+          });
+          widget.onPressed();
+      },
+      onTapUp: (_){
+        _controller.reverse();
         setState(() {
-          _isHovered = true;
+          _isHovered = false;
+        });
+      },
+      onTapCancel: (){
+        _controller.reverse();
+        setState(() {
+          _isHovered = false;
         });
       },
       child: AnimatedMargin(
