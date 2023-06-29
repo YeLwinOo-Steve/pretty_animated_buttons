@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_colors.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/enums/slide_positions.dart';
-import 'package:pretty_buttons/extensions/string_ex.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
-import 'package:pretty_buttons/util/animated_color_text.dart';
+import 'package:pretty_animated_buttons/configs/pkg_colors.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/enums/slide_positions.dart';
+import 'package:pretty_animated_buttons/extensions/string_ex.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/util/animated_color_text.dart';
 
 /// [PrettyColorSlideButton] is pretty button that slides in a color when button is tapped
 /// You'll have 4 slide positions - left,right,top,bottom using [position] parameter

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/extensions/string_ex.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
-import 'package:pretty_buttons/util/animated_horizontal_stick.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/extensions/string_ex.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/util/animated_horizontal_stick.dart';
 
 /// [PrettySlideUnderlineButton] is animated button
 /// that creates slide underline animation and moves the icon to the right a bit

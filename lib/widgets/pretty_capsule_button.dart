@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_colors.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/extensions/string_ex.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
-import 'package:pretty_buttons/util/animated_color_text.dart';
+import 'package:pretty_animated_buttons/configs/pkg_colors.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/extensions/string_ex.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/util/animated_color_text.dart';
 
 /// [PrettyCapsuleButton] is an animated button that contains a leading icon and a label
 /// When pressing the button in mobile device or hovering it in web,

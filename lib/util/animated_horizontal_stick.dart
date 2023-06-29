@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_colors.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/configs/pkg_colors.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
 
 
 const double factor = 0.2;

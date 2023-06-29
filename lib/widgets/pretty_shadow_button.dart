@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_colors.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/configs/pkg_colors.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
 
 /// [PrettyShadowButton] is animated button that consists of two main parts - Button part, Shadow part
 /// In Button part, you can add label and an icon

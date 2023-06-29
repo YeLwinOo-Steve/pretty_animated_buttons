@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
 
 /// Neumorphic style button
 /// When using neumorphic button, to feel neumorphic effect,

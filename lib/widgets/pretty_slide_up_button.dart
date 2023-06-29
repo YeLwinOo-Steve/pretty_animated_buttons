@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_colors.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/configs/pkg_colors.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
 
 /// [PrettySlideUpButton] has two children
 /// It always shows first child if there's no interaction such as pressing the button

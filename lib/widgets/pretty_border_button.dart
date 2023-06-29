@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_colors.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/extensions/string_ex.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/configs/pkg_colors.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/extensions/string_ex.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
 
 /// [PrettyBorderButton] is an animated button
 /// that creates a border from left bottom and top right at the same time when pressed the button in mobile devices

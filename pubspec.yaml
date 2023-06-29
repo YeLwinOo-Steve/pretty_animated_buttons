@@ -1,8 +1,8 @@
-name: pretty_buttons
+name: pretty_animated_buttons
 description: A collection of fancy animated buttons package
 version: 0.0.1
-repository: https://github.com/YeLwinOo-Steve/pretty_buttons
-homepage: https://github.com/YeLwinOo-Steve/pretty_buttons
+repository: https://github.com/YeLwinOo-Steve/pretty_animated_buttons
+homepage: https://github.com/YeLwinOo-Steve/pretty_animated_buttons
 
 environment:
   sdk: '>=2.19.0 <3.0.0'

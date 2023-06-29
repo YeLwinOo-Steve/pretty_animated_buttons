@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  pretty_buttons:
-    path: ../../pretty_buttons
+  pretty_animated_buttons:
+    path: ../../pretty_animated_buttons
 
   cupertino_icons: ^1.0.2
 

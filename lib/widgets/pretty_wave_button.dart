@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/configs/pkg_colors.dart';
-import 'package:pretty_buttons/configs/pkg_sizes.dart';
-import 'package:pretty_buttons/extensions/widget_ex.dart';
+import 'package:pretty_animated_buttons/configs/pkg_colors.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/extensions/widget_ex.dart';
 
 /// [PrettyWaveButton] is a custom button that creates wave effect when pressed
 /// You can tweak wave length effect by using [waveLength] property

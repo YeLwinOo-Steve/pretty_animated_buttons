@@ -1,4 +1,4 @@
-library pretty_buttons;
+library pretty_animated_buttons;
 
 export './widgets/pretty_shadow_button.dart';
 export './widgets/pretty_neumorphic_button.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pretty_buttons/pretty_buttons.dart';
+import 'package:pretty_animated_buttons/pretty_animated_buttons.dart';
 
 void main() {
   runApp(const MyApp());
