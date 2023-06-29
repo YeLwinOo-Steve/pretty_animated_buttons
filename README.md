@@ -1,9 +1,9 @@
- # Pretty Buttons
+ # Pretty Animated Buttons
 
- ## Pretty Buttons is a package for a collection of beautiful animated buttons which are highly customizable too. Currently, a total of 12 animated buttons are available. More fancy buttons are coming soon...
+ ### Pretty Animated Buttons is a package for a collection of beautiful animated buttons which are highly customizable too. Currently, a total of 12 animated buttons are available. More fancy buttons are coming soon...
 
 
-### Pretty Buttons List
+### Pretty Animated Buttons List
 
 | Index | Pretty Buttons | Example  
 | --- | ------- | ------ |
