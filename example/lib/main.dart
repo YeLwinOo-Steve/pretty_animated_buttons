@@ -79,11 +79,11 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
                 label: 'Pretty Slide Icon Button',
                 slidePosition: SlidePosition.right,
                 labelStyle: Theme.of(context).textTheme.bodyLarge!,
-                onPressed:(){},
+                onPressed: () {},
               ),
               PrettySlideUpButton(
                 bgColor: btnColor,
-                onPressed:(){},
+                onPressed: () {},
                 firstChild: const Text(
                   'First Slide Up Text',
                   style: TextStyle(
@@ -99,18 +99,18 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               ),
               PrettyColorSlideButton(
                 label: 'Pretty Color Slide Button',
-                onPressed:(){},
+                onPressed: () {},
                 bgColor: btnColor,
                 position: SlidePosition.bottom,
               ),
               PrettySkewButton(
                 label: 'Pretty Skew Button',
                 firstBgColor: btnColor,
-                onPressed:(){},
+                onPressed: () {},
               ),
               PrettyBorderButton(
                 label: 'Pretty Border Button',
-                onPressed:(){},
+                onPressed: () {},
               ),
               PrettyBarButton(
                 onPressed: () {},
@@ -122,7 +122,11 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
                   fontWeight: FontWeight.w700,
                 ),
                 bgColor: btnColor,
-                onPressed:(){},
+                onPressed: () {},
+              ),
+              PrettyThreeDButton(
+                label: 'Pretty Three D Button',
+                color: btnColor,
               ),
             ],
           ),
