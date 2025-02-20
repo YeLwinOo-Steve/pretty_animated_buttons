@@ -1,19 +1,27 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
 
 class PrettyShineButton extends StatefulWidget {
-  final String label;
-  final VoidCallback onPressed;
-  final Color bgColor;
-
   const PrettyShineButton({
     Key? key,
     required this.label,
+    this.padding = const EdgeInsets.symmetric(vertical: s12, horizontal: s24),
     required this.onPressed,
     this.bgColor = Colors.teal,
+    this.borderRadius = s5,
+    this.duration = duration500,
+    this.curve = Curves.easeInOut,
   }) : super(key: key);
 
+  final String label;
+  final VoidCallback onPressed;
+  final Color bgColor;
+  final double borderRadius;
+  final Duration duration;
+  final Curve curve;
+  final EdgeInsetsGeometry padding;
   @override
   State<PrettyShineButton> createState() => _PrettyShineButtonState();
 }
@@ -55,7 +63,6 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
     return GestureDetector(
       onTap: _startAnimation,
       child: Container(
-        height: 200,
         decoration: BoxDecoration(
           color: widget.bgColor,
           borderRadius: BorderRadius.circular(8),
@@ -63,12 +70,15 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
         clipBehavior: Clip.antiAlias,
         child: Stack(
           children: [
-            Center(
-              child: Text(
-                widget.label,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+            Padding(
+              padding: widget.padding,
+              child: Center(
+                child: Text(
+                  widget.label,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
                 ),
               ),
             ),

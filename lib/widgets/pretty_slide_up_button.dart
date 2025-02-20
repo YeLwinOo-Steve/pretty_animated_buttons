@@ -50,9 +50,8 @@ class _PrettySlideUpButtonState extends State<PrettySlideUpButton>
   }
 
   Animation<Offset> get firstSlideUpAnimation =>
-      Tween<Offset>(begin: Offset.zero, end: const Offset(0, -1)).animate(
-        firstAnimation,
-      );
+      Tween<Offset>(begin: Offset.zero, end: const Offset(0, -1))
+          .animate(firstAnimation);
   Animation<double> get firstOpacityAnimation =>
       Tween<double>(begin: s1, end: s0).animate(firstAnimation);
 
@@ -86,9 +85,9 @@ class _PrettySlideUpButtonState extends State<PrettySlideUpButton>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if(_controller.isCompleted){
+        if (_controller.isCompleted) {
           _controller.reverse();
-        }else if(_controller.isDismissed) {
+        } else if (_controller.isDismissed) {
           _controller.forward();
         }
         widget.onPressed();
