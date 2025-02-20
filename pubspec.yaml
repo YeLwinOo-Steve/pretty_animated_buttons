@@ -5,8 +5,8 @@ repository: https://github.com/YeLwinOo-Steve/pretty_animated_buttons
 homepage: https://github.com/YeLwinOo-Steve/pretty_animated_buttons
 
 environment:
-  sdk: '>=2.19.0 <4.0.0'
-  flutter: ">=1.17.0"
+  sdk: ">=3.5.3 <4.0.0"
+  flutter: ">=3.27.2"
 
 dependencies:
   flutter:
@@ -18,11 +18,4 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
 
-
-flutter:
-
-  # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
 
