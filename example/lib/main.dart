@@ -125,11 +125,14 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               //   onPressed: () {},
               // ),
               WobbleButton(
+                onPressed: () {},
+                borderRadius: 16,
+                duration: const Duration(milliseconds: 2000),
+                padding: const EdgeInsets.all(24.0),
                 child: const Text(
                   'Pretty Wobble Button',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
-                onPressed: () {},
               ),
               // PrettyShineButton(
               //   onPressed: () {},
