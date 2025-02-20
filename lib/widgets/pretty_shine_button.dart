@@ -33,6 +33,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   bool _isAnimating = false;
+  final toRadians = pi / 180;
 
   @override
   void initState() {
@@ -69,10 +70,10 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
       };
 
   double get _getRotationAngle => switch (widget.slidePosition) {
-        ShineSlidePositions.topLeft => 45 * pi / 180,
-        ShineSlidePositions.topRight => 135 * pi / 180,
-        ShineSlidePositions.bottomLeft => -45 * pi / 180,
-        ShineSlidePositions.bottomRight => -135 * pi / 180,
+        ShineSlidePositions.topLeft => 45 * toRadians,
+        ShineSlidePositions.topRight => 135 * toRadians,
+        ShineSlidePositions.bottomLeft => -45 * toRadians,
+        ShineSlidePositions.bottomRight => -135 * toRadians,
       };
 
   Widget _buildShineEffect() {
@@ -86,7 +87,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
           child: Transform.rotate(
             angle: _getRotationAngle,
             child: Transform.scale(
-              scale: Tween<double>(begin: 2, end: 50)
+              scale: Tween<double>(begin: 0, end: 50)
                   .animate(CurvedAnimation(
                     parent: _controller,
                     curve: Curves.linear,
