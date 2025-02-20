@@ -14,6 +14,7 @@ class PrettyShineButton extends StatefulWidget {
     this.borderRadius = s5,
     this.duration = duration500,
     this.curve = Curves.easeInOut,
+    this.slidePosition = ShineSlidePositions.topLeft,
   }) : super(key: key);
 
   final Widget child;
@@ -22,6 +23,7 @@ class PrettyShineButton extends StatefulWidget {
   final double borderRadius;
   final Duration duration;
   final Curve curve;
+  final ShineSlidePositions slidePosition;
   final EdgeInsetsGeometry padding;
   @override
   State<PrettyShineButton> createState() => _PrettyShineButtonState();
@@ -59,6 +61,67 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
     widget.onPressed();
   }
 
+  Offset get _getStartPosition => switch (widget.slidePosition) {
+        ShineSlidePositions.topLeft => const Offset(-15, -100),
+        ShineSlidePositions.topRight => const Offset(100, -100),
+        ShineSlidePositions.bottomLeft => const Offset(-15, 100),
+        ShineSlidePositions.bottomRight => const Offset(100, 100),
+      };
+
+  double get _getRotationAngle => switch (widget.slidePosition) {
+        ShineSlidePositions.topLeft => 45 * pi / 180,
+        ShineSlidePositions.topRight => 135 * pi / 180,
+        ShineSlidePositions.bottomLeft => -45 * pi / 180,
+        ShineSlidePositions.bottomRight => -135 * pi / 180,
+      };
+
+  Widget _buildShineEffect() {
+    final startPosition = _getStartPosition;
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return Positioned(
+          left: startPosition.dx,
+          top: startPosition.dy,
+          child: Transform.rotate(
+            angle: _getRotationAngle,
+            child: Transform.scale(
+              scale: Tween<double>(begin: 2, end: 50)
+                  .animate(CurvedAnimation(
+                    parent: _controller,
+                    curve: Curves.linear,
+                  ))
+                  .value,
+              child: Opacity(
+                opacity: Tween<double>(begin: 0.7, end: 0)
+                    .animate(CurvedAnimation(
+                      parent: _controller,
+                      curve: Curves.linear,
+                    ))
+                    .value,
+                child: Container(
+                  width: 30,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(widget.borderRadius),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withValues(alpha: .5),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -66,7 +129,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
       child: Container(
         decoration: BoxDecoration(
           color: widget.bgColor,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(widget.borderRadius),
         ),
         clipBehavior: Clip.antiAlias,
         child: Stack(
@@ -75,49 +138,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
               padding: widget.padding,
               child: widget.child,
             ),
-            if (_isAnimating)
-              AnimatedBuilder(
-                animation: _controller,
-                builder: (context, child) {
-                  return Positioned(
-                    left: -15,
-                    top: -100,
-                    child: Transform.rotate(
-                      angle: 45 * pi / 180,
-                      child: Transform.scale(
-                        scale: Tween<double>(begin: 2, end: 50)
-                            .animate(CurvedAnimation(
-                              parent: _controller,
-                              curve: Curves.linear,
-                            ))
-                            .value,
-                        child: Opacity(
-                          opacity: Tween<double>(begin: 0.7, end: 0)
-                              .animate(CurvedAnimation(
-                                parent: _controller,
-                                curve: Curves.linear,
-                              ))
-                              .value,
-                          child: Container(
-                            width: 30,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.white.withValues(alpha: .5),
-                                  blurRadius: 10,
-                                  spreadRadius: 2,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
+            if (_isAnimating) _buildShineEffect(),
           ],
         ),
       ),
