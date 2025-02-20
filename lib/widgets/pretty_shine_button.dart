@@ -87,7 +87,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
           child: Transform.rotate(
             angle: _getRotationAngle,
             child: Transform.scale(
-              scale: Tween<double>(begin: 0, end: 50)
+              scale: Tween<double>(begin: 0, end: 100)
                   .animate(CurvedAnimation(
                     parent: _controller,
                     curve: Curves.linear,
@@ -127,22 +127,24 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _startAnimation,
-      child: Container(
-        decoration: BoxDecoration(
-          color: widget.bgColor,
-          borderRadius: BorderRadius.circular(widget.borderRadius),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: Stack(
-          children: [
-            Padding(
-              padding: widget.padding,
-              child: widget.child,
-            ),
-            if (_isAnimating) _buildShineEffect(),
-          ],
-        ),
-      ),
+      child: LayoutBuilder(builder: (context, constraints) {
+        return Container(
+          decoration: BoxDecoration(
+            color: widget.bgColor,
+            borderRadius: BorderRadius.circular(widget.borderRadius),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Stack(
+            children: [
+              Padding(
+                padding: widget.padding,
+                child: widget.child,
+              ),
+              if (_isAnimating) _buildShineEffect(),
+            ],
+          ),
+        );
+      }),
     );
   }
 }
