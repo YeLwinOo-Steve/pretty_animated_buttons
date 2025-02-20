@@ -89,7 +89,7 @@ class _WobbleButtonState extends State<WobbleButton>
                 borderRadius: BorderRadius.circular(widget.borderRadius),
                 color: widget.bgColor,
               ),
-              child: Center(child: widget.child),
+              child: widget.child,
             ),
           ),
         );

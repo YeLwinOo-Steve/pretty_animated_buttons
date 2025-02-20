@@ -12,7 +12,7 @@ class PrettyShineButton extends StatefulWidget {
     required this.onPressed,
     this.bgColor = Colors.teal,
     this.borderRadius = s5,
-    this.duration = duration500,
+    this.duration = duration1000,
     this.curve = Curves.easeInOut,
     this.slidePosition = ShineSlidePositions.topLeft,
   }) : super(key: key);

@@ -137,13 +137,15 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
-              // PrettyShineButton(
-              //   onPressed: () {},
-              //   child: const Text(
-              //     'Pretty Shine Button',
-              //     style: TextStyle(color: Colors.white),
-              //   ),
-              // ),
+              PrettyShineButton(
+                onPressed: () {},
+                borderRadius: 16,
+                padding: const EdgeInsets.all(24.0),
+                child: const Text(
+                  'Pretty Shine Button',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
             ],
           ),
         ),
