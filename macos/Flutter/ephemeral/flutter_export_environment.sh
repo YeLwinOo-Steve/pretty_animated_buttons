@@ -1,11 +1,11 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\flutter"
-export "FLUTTER_APPLICATION_PATH=A:\Playground Projects\Skill_Improvement\pretty_animated_buttons"
+export "FLUTTER_ROOT=/Users/yelwinoo/development/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/yelwinoo/work/personal/packages/pretty_animated_buttons"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
-export "FLUTTER_BUILD_NAME=0.0.1"
-export "FLUTTER_BUILD_NUMBER=0.0.1"
+export "FLUTTER_BUILD_NAME=0.0.2"
+export "FLUTTER_BUILD_NUMBER=0.0.2"
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
