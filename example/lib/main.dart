@@ -124,13 +124,20 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               //   bgColor: btnColor,
               //   onPressed: () {},
               // ),
-              PrettyShineButton(
-                onPressed: () {},
+              WobbleButton(
                 child: const Text(
-                  'Pretty Shine Button',
+                  'Pretty Wobble Button',
                   style: TextStyle(color: Colors.white),
                 ),
+                onPressed: () {},
               ),
+              // PrettyShineButton(
+              //   onPressed: () {},
+              //   child: const Text(
+              //     'Pretty Shine Button',
+              //     style: TextStyle(color: Colors.white),
+              //   ),
+              // ),
             ],
           ),
         ),
