@@ -35,6 +35,9 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Pretty Animated Buttons'),
+      ),
       backgroundColor: scaffoldBg,
       body: Padding(
         padding: const EdgeInsets.all(
@@ -81,22 +84,22 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               //   labelStyle: Theme.of(context).textTheme.bodyLarge!,
               //   onPressed: () {},
               // ),
-              PrettySlideUpButton(
-                bgColor: btnColor,
-                onPressed: () {},
-                firstChild: const Text(
-                  'First Slide Up Text',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                secondChild: const Text(
-                  'Second Slide Up Text',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              // PrettySlideUpButton(
+              //   bgColor: btnColor,
+              //   onPressed: () {},
+              //   firstChild: const Text(
+              //     'First Slide Up Text',
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //     ),
+              //   ),
+              //   secondChild: const Text(
+              //     'Second Slide Up Text',
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //     ),
+              //   ),
+              // ),
               // PrettyColorSlideButton(
               //   label: 'Pretty Color Slide Button',
               //   onPressed: () {},
