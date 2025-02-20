@@ -45,45 +45,45 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              PrettyShadowButton(
-                label: "Pretty Shadow Button",
-                onPressed: () {},
-                icon: Icons.arrow_forward,
-                shadowColor: btnColor,
-              ),
-              PrettyNeumorphicButton(
-                label: 'Pretty Neumorphic Button',
-                onPressed: () {},
-              ),
-              PrettySlideUnderlineButton(
-                label: 'Pretty Slide Underline Button',
-                onPressed: () {},
-                secondSlideColor: scaffoldBg,
-              ),
-              PrettyWaveButton(
-                child: const Text(
-                  'Pretty Wave Button',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                onPressed: () {},
-              ),
-              PrettyFuzzyButton(
-                label: 'Pretty Fuzzy Button',
-                onPressed: () {},
-              ),
-              PrettySlideIconButton(
-                foregroundColor: btnColor,
-                icon: Icons.arrow_forward,
-                label: 'Pretty Slide Icon Button',
-                slidePosition: SlidePosition.right,
-                labelStyle: Theme.of(context).textTheme.bodyLarge!,
-                onPressed:(){},
-              ),
+              // PrettyShadowButton(
+              //   label: "Pretty Shadow Button",
+              //   onPressed: () {},
+              //   icon: Icons.arrow_forward,
+              //   shadowColor: btnColor,
+              // ),
+              // PrettyNeumorphicButton(
+              //   label: 'Pretty Neumorphic Button',
+              //   onPressed: () {},
+              // ),
+              // PrettySlideUnderlineButton(
+              //   label: 'Pretty Slide Underline Button',
+              //   onPressed: () {},
+              //   secondSlideColor: scaffoldBg,
+              // ),
+              // PrettyWaveButton(
+              //   child: const Text(
+              //     'Pretty Wave Button',
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //     ),
+              //   ),
+              //   onPressed: () {},
+              // ),
+              // PrettyFuzzyButton(
+              //   label: 'Pretty Fuzzy Button',
+              //   onPressed: () {},
+              // ),
+              // PrettySlideIconButton(
+              //   foregroundColor: btnColor,
+              //   icon: Icons.arrow_forward,
+              //   label: 'Pretty Slide Icon Button',
+              //   slidePosition: SlidePosition.right,
+              //   labelStyle: Theme.of(context).textTheme.bodyLarge!,
+              //   onPressed: () {},
+              // ),
               PrettySlideUpButton(
                 bgColor: btnColor,
-                onPressed:(){},
+                onPressed: () {},
                 firstChild: const Text(
                   'First Slide Up Text',
                   style: TextStyle(
@@ -97,32 +97,36 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
                   ),
                 ),
               ),
-              PrettyColorSlideButton(
-                label: 'Pretty Color Slide Button',
-                onPressed:(){},
-                bgColor: btnColor,
-                position: SlidePosition.bottom,
-              ),
-              PrettySkewButton(
-                label: 'Pretty Skew Button',
-                firstBgColor: btnColor,
-                onPressed:(){},
-              ),
-              PrettyBorderButton(
-                label: 'Pretty Border Button',
-                onPressed:(){},
-              ),
-              PrettyBarButton(
+              // PrettyColorSlideButton(
+              //   label: 'Pretty Color Slide Button',
+              //   onPressed: () {},
+              //   bgColor: btnColor,
+              //   position: SlidePosition.bottom,
+              // ),
+              // PrettySkewButton(
+              //   label: 'Pretty Skew Button',
+              //   firstBgColor: btnColor,
+              //   onPressed: () {},
+              // ),
+              // PrettyBorderButton(
+              //   label: 'Pretty Border Button',
+              //   onPressed: () {},
+              // ),
+              // PrettyBarButton(
+              //   onPressed: () {},
+              //   label: 'Pretty Bar Button',
+              // ),
+              // PrettyCapsuleButton(
+              //   label: 'Pretty Capsule Button'.toUpperCase(),
+              //   labelStyle: const TextStyle(
+              //     fontWeight: FontWeight.w700,
+              //   ),
+              //   bgColor: btnColor,
+              //   onPressed: () {},
+              // ),
+              PrettyShineButton(
                 onPressed: () {},
                 label: 'Pretty Bar Button',
-              ),
-              PrettyCapsuleButton(
-                label: 'Pretty Capsule Button'.toUpperCase(),
-                labelStyle: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                ),
-                bgColor: btnColor,
-                onPressed:(){},
               ),
             ],
           ),
