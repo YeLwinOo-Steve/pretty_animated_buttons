@@ -127,6 +127,7 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               PrettyThreeDButton(
                 label: 'Pretty Three D Button',
                 color: btnColor,
+                onPressed: (){},
               ),
             ],
           ),
