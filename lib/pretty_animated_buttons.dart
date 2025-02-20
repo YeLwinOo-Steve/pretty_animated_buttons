@@ -12,7 +12,7 @@ export './widgets/pretty_skew_button.dart';
 export './widgets/pretty_border_button.dart';
 export './widgets/pretty_bar_button.dart';
 export './widgets/pretty_capsule_button.dart';
-export './widgets/pretty_kiran_button.dart';
+export 'widgets/pretty_shine_button.dart';
 
 // enumerations
 export './enums/slide_positions.dart';

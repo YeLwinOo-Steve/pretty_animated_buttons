@@ -126,7 +126,10 @@ class _PrettyButtonsExampleState extends State<PrettyButtonsExample> {
               // ),
               PrettyShineButton(
                 onPressed: () {},
-                label: 'Pretty Bar Button',
+                child: const Text(
+                  'Pretty Bar Button',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ],
           ),
