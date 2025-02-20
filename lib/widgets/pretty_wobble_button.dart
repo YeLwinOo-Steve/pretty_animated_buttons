@@ -1,16 +1,27 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
 
 class WobbleButton extends StatefulWidget {
-  final Widget child;
-  final VoidCallback onPressed;
-
   const WobbleButton({
     Key? key,
     required this.child,
     required this.onPressed,
+    this.padding = const EdgeInsets.symmetric(vertical: s12, horizontal: s24),
+    this.bgColor = Colors.teal,
+    this.borderRadius = s5,
+    this.duration = duration500,
+    this.curve = Curves.easeInOut,
   }) : super(key: key);
+
+  final Widget child;
+  final VoidCallback onPressed;
+  final Color bgColor;
+  final double borderRadius;
+  final Duration duration;
+  final Curve curve;
+  final EdgeInsetsGeometry padding;
 
   @override
   State<WobbleButton> createState() => _WobbleButtonState();
@@ -26,7 +37,7 @@ class _WobbleButtonState extends State<WobbleButton>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 2500),
+      duration: widget.duration,
       vsync: this,
     );
     _animation = TweenSequence<double>([
@@ -67,20 +78,18 @@ class _WobbleButtonState extends State<WobbleButton>
           transform: Matrix4.skew(_animation.value, _animation.value),
           child: GestureDetector(
             onTap: () {
-              _controller.reset();
-              _controller.forward();
+              _controller
+                ..reset()
+                ..forward();
               widget.onPressed();
             },
             child: Container(
+              padding: widget.padding,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
-                color: Colors.teal,
+                borderRadius: BorderRadius.circular(widget.borderRadius),
+                color: widget.bgColor,
               ),
-              width: 300,
-              height: 80,
-              child: Center(
-                child: widget.child,
-              ),
+              child: Center(child: widget.child),
             ),
           ),
         );
