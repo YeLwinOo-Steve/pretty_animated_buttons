@@ -1,6 +1,6 @@
 name: pretty_animated_buttons
 description: A collection of fancy animated buttons package
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/YeLwinOo-Steve/pretty_animated_buttons
 homepage: https://github.com/YeLwinOo-Steve/pretty_animated_buttons
 
@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_inset_box_shadow: ^1.0.8
+  flutter_inset_shadow: ^2.0.3
 
 dev_dependencies:
   flutter_test:

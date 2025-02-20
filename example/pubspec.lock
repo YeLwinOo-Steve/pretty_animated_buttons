@@ -6,8 +6,10 @@ packages:
     description:
       name: async
       sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
+      sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
       url: "https://pub.dev"
     source: hosted
+    version: "2.11.0"
     version: "2.11.0"
   boolean_selector:
     dependency: transitive
@@ -22,8 +24,10 @@ packages:
     description:
       name: characters
       sha256: "04a925763edad70e8443c99234dc3328f442e811f1d8fd1a72f1c8ad0f69a605"
+      sha256: "04a925763edad70e8443c99234dc3328f442e811f1d8fd1a72f1c8ad0f69a605"
       url: "https://pub.dev"
     source: hosted
+    version: "1.3.0"
     version: "1.3.0"
   clock:
     dependency: transitive
@@ -62,14 +66,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_inset_box_shadow:
+  flutter_inset_shadow:
     dependency: transitive
     description:
-      name: flutter_inset_box_shadow
-      sha256: "0b1930ed5f4ad84b11b41dda907fbc5d4c12929a4c51455c626e5937b47ffb93"
+      name: flutter_inset_shadow
+      sha256: "5978b67f028c7ca3566516eda14f0a25a5ce13c0fa21a86a48a0b00faa7db9d7"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.8"
+    version: "2.0.3"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -104,8 +108,11 @@ packages:
     description:
       name: leak_tracker_testing
       sha256: "6ba465d5d76e67ddf503e1161d1f4a6bc42306f9d66ca1e8f079a47290fb06d3"
+      name: leak_tracker_testing
+      sha256: "6ba465d5d76e67ddf503e1161d1f4a6bc42306f9d66ca1e8f079a47290fb06d3"
       url: "https://pub.dev"
     source: hosted
+    version: "3.0.1"
     version: "3.0.1"
   lints:
     dependency: transitive
@@ -120,8 +127,10 @@ packages:
     description:
       name: matcher
       sha256: d2323aa2060500f906aa31a895b4030b6da3ebdcc5619d14ce1aada65cd161cb
+      sha256: d2323aa2060500f906aa31a895b4030b6da3ebdcc5619d14ce1aada65cd161cb
       url: "https://pub.dev"
     source: hosted
+    version: "0.12.16+1"
     version: "0.12.16+1"
   material_color_utilities:
     dependency: transitive
@@ -144,8 +153,10 @@ packages:
     description:
       name: path
       sha256: "087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af"
+      sha256: "087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af"
       url: "https://pub.dev"
     source: hosted
+    version: "1.9.0"
     version: "1.9.0"
   pretty_animated_buttons:
     dependency: "direct main"
@@ -164,8 +175,10 @@ packages:
     description:
       name: source_span
       sha256: "53e943d4206a5e30df338fd4c6e7a077e02254531b138a15aec3bd143c1a8b3c"
+      sha256: "53e943d4206a5e30df338fd4c6e7a077e02254531b138a15aec3bd143c1a8b3c"
       url: "https://pub.dev"
     source: hosted
+    version: "1.10.0"
     version: "1.10.0"
   stack_trace:
     dependency: transitive
@@ -180,8 +193,10 @@ packages:
     description:
       name: stream_channel
       sha256: ba2aa5d8cc609d96bbb2899c28934f9e1af5cddbd60a827822ea467161eb54e7
+      sha256: ba2aa5d8cc609d96bbb2899c28934f9e1af5cddbd60a827822ea467161eb54e7
       url: "https://pub.dev"
     source: hosted
+    version: "2.1.2"
     version: "2.1.2"
   string_scanner:
     dependency: transitive
