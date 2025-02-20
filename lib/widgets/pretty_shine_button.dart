@@ -2,11 +2,12 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
+import 'package:pretty_animated_buttons/pretty_animated_buttons.dart';
 
 class PrettyShineButton extends StatefulWidget {
   const PrettyShineButton({
     Key? key,
-    required this.label,
+    required this.child,
     this.padding = const EdgeInsets.symmetric(vertical: s12, horizontal: s24),
     required this.onPressed,
     this.bgColor = Colors.teal,
@@ -15,7 +16,7 @@ class PrettyShineButton extends StatefulWidget {
     this.curve = Curves.easeInOut,
   }) : super(key: key);
 
-  final String label;
+  final Widget child;
   final VoidCallback onPressed;
   final Color bgColor;
   final double borderRadius;
@@ -35,7 +36,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 500),
+      duration: widget.duration,
       vsync: this,
     );
     _controller.addStatusListener((status) {
@@ -72,15 +73,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
           children: [
             Padding(
               padding: widget.padding,
-              child: Center(
-                child: Text(
-                  widget.label,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
+              child: widget.child,
             ),
             if (_isAnimating)
               AnimatedBuilder(
@@ -99,7 +92,7 @@ class _PrettyShineButtonState extends State<PrettyShineButton>
                             ))
                             .value,
                         child: Opacity(
-                          opacity: Tween<double>(begin: 0.8, end: 0)
+                          opacity: Tween<double>(begin: 0.7, end: 0)
                               .animate(CurvedAnimation(
                                 parent: _controller,
                                 curve: Curves.linear,
