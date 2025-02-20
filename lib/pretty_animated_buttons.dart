@@ -16,3 +16,4 @@ export 'widgets/pretty_shine_button.dart';
 
 // enumerations
 export './enums/slide_positions.dart';
+export './enums/shine_slide_positions.dart';
